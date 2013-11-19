@@ -38,11 +38,13 @@ public class MainActivity extends Activity {
 		menu.add(0, RED, 0, "RED");
 		menu.add(0, GREEN, 0, "GREEN");
 		menu.add(0, BLUE, 0, "BLUE");
+		menu.setGroupCheckable(0, true, true);
 		super.onCreateContextMenu(menu, v, menuInfo);
 	}
 
 	@Override
 	public boolean onContextItemSelected(MenuItem item) {
+		item.setChecked(true);
 		switch (item.getItemId()) {
 		case RED:
 			textView.setBackgroundColor(Color.RED);
